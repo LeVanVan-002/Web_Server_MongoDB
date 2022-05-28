@@ -1,0 +1,21 @@
+<% include header.ejs %>
+<!-- Page content-->
+<div class="container-fluid">
+    <h1 class="mt-4" style="text-align:center ; color:rgb(238, 110, 174);">Sửa Dữ liệu Bảng Hóa Đơn</h1><br><br>
+    <form action="/sua" method="POST" style="text-align:center ; " enctype="multipart/form-data">
+        <input type="hidden" name="maso" value="<%= hh._id %>">
+        <input type="text" name="ngay" value="<%= hh.ngay %>">
+        <hr>
+        <input type="number" name="tien" value="<%= hh.tien %>">
+        <hr>
+        <input type="file" name="hinhanh">
+        <% if(hh.hinhanh!=null){ %> 
+        <img src="/image/<%= hh.hinhanh %>"  height="100px" width="80px" alt="">
+        <% }else{ %> 
+        <img src="/image/noimage2.jpg" height="100px" width="80px" alt="">
+        <% } %> 
+        <hr>
+        <button type="submit" >Sửa dữ liệu </button>
+    </form>
+</div>
+<% include footer.ejs %>

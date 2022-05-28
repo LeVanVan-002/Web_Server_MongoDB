@@ -1,0 +1,49 @@
+<% include header.ejs %>
+<!-- Page content-->
+<div class="container-fluid">
+    <h1 class="mt-4" style="text-align:center ; color:rgb(163, 10, 86);">Dữ liệu Bảng Hóa Đơn</h1>
+    <table class="table table-striped  table-bordered " align="center" border="2">
+        <tr style=" text-align: center ;background-color: rgb(241, 157, 182);">
+            <th>ngày </th>
+            <th>thành tiền </th>
+            <th>Hình</th>
+            <th>Xử Lý</th>
+        </tr>
+        <% dshh.forEach(hh=> { %>
+        <tr style=" text-align: center ; ">
+            <td> <%= hh.ngay  %> </td>
+            <td> <%=  hh.tien %> vnđ </td>
+            <td>
+                <% if (hh.hinhanh!=null){ %>
+                <img src='/image/<%= hh.hinhanh %>' height="100px" width="80px">
+                <% } else{ %>
+                <img src='/image/noimage2.jpg' height="100px" width="80px">
+                <% } %>
+            </td>
+            <td>
+                <a href="/sua/<%= hh._id %>" class="btn btn-primary">sửa</a>
+                <a onclick="xoadulieu('<%= hh._id  %>')" class="btn btn-danger">xóa</a>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+</div>
+<script>
+    function xoadulieu(id) {
+        Swal.fire({
+            title: 'Thao Tác Xóa ?',
+            text: "Bạn Không Thể Khôi Phục Sau Khi Xóa!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes !'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.location = "/xoa/" + id
+            }
+        })
+    }
+</script>
+<script src="/js/scripts.js"></script>
+<% include footer.ejs %>

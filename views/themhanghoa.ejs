@@ -1,0 +1,14 @@
+<% include header.ejs %>
+<!-- Page content-->
+<div class="container-fluid">
+    <h1 class="mt-4" style="text-align:center ; color:rgb(240, 111, 150);">Thêm Dữ liệu Bảng Hóa Đơn</h1><br><br>
+    <form action="/them" method="POST" encType="multipart/form-data" style="text-align:center ; ">
+        <input type="text" name="ngay" placeholder="nhập ngày">
+        <hr>
+        <input type="number" name="tien" placeholder="số tiền là ">
+        <hr>
+        <input type="file" name="hinhanh" >
+        <button type="submit">Thêm dữ liệu </button>
+    </form>
+</div>
+<% include footer.ejs %>

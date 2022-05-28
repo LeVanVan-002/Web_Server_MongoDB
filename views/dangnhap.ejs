@@ -1,0 +1,13 @@
+<% include header.ejs %>
+<!-- Page content-->
+<div class="container-fluid">
+    <h1 class="mt-4" style="text-align:center ; color:rgb(240, 111, 150);">Đăng nhập tài khoản</h1><br><br>
+    <form action="/dangky" method="POST"  style="text-align:center ; ">
+        <input type="text" name="tendangnhap" placeholder="nhập tên taaif khoản đăng nhập">
+        <hr>
+        <input type="password" name="matkhau" placeholder="nhập mật khẩu đăng nhập">
+        <hr>
+        <button type="submit">Đăng Nhập</button>
+    </form>
+</div>
+<% include footer.ejs %>
